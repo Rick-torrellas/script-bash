@@ -1,0 +1,16 @@
+# Ignorar directorios de dependencias y artefactos de build locales
+node_modules
+__pycache__
+*.pyc
+
+# Archivos de configuración de IDE y sistema operativo
+.vscode
+.idea
+*.DS_Store
+
+# Git
+.git
+.gitignore
+
+# Archivos de entorno (no deben ir en la imagen)
+.env

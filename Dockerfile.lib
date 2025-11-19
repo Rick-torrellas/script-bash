@@ -1,0 +1,20 @@
+# Usa una imagen base ligera para construir tu módulo
+FROM alpine:latest
+
+# Establece el directorio donde estarán todas tus funciones
+WORKDIR /app
+
+# Copia tu archivo principal (index.sh) y todas las funciones/scripts auxiliares
+# Asegúrate de que index.sh importa correctamente las demás funciones
+# Suponemos que tienes un directorio 'src' que contiene:
+# - index.sh (el archivo que importa todo)
+# - funcion_a.sh
+# - funcion_b.sh
+COPY src src
+
+RUN chmod +x src/index.sh
+
+# Opcional: Dale permisos de lectura/ejecución si es necesario, aunque para 'source' no es crítico.
+# RUN chmod +x index.sh
+
+# No necesitas CMD o ENTRYPOINT, esta imagen no se ejecuta sola, solo expone archivos.

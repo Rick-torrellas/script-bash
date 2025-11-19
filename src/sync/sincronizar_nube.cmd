@@ -1,0 +1,1 @@
+doskey sincronizar_nube=rclone sync -v $1 $2

@@ -1,0 +1,1 @@
+doskey comrpimir_tar=tar -czvf $*

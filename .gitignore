@@ -1,0 +1,7 @@
+__pycache__/
+static/
+public/
+.next/
+dist/
+.venv
+node_modules/

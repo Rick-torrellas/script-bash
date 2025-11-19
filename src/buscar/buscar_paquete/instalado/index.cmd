@@ -1,0 +1,1 @@
+call "%~dp0buscar_paquete_instalado_winget.cmd"

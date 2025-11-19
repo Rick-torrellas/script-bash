@@ -1,0 +1,1 @@
+call "%~dp0buscar_paquete\index.cmd"

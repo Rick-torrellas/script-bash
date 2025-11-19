@@ -1,0 +1,52 @@
+
+services:
+  dev:
+    # Indica dónde está el Dockerfile para construir esta imagen
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+      
+    # el nombre de la imagen
+    image: ${APP_NAME}-dev:${APP_VERSION}
+
+    # Asigna un nombre estático al contenedor
+    container_name: ${APP_NAME}-dev
+    
+    volumes: 
+      - ./src:src
+      - ./dev:dev
+
+    restart: on-failure:3
+
+  lib:
+    # Indica dónde está el Dockerfile para construir esta imagen
+    build: 
+      context: .
+      dockerfile: Dockerfile.lib
+      
+    # el nombre de la imagen
+    image: ${APP_NAME}-lib:${APP_VERSION}
+
+    # Asigna un nombre estático al contenedor
+    container_name: ${APP_NAME}-lib
+    
+    volumes: 
+      - ./src:src
+      
+    restart: on-failure:3
+  prod:
+    # Indica dónde está el Dockerfile para construir esta imagen
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      
+    # el nombre de la imagen
+    image: ${APP_NAME}:${APP_VERSION}
+
+    # Asigna un nombre estático al contenedor
+    container_name: ${APP_NAME}
+    
+    volumes: 
+      - ./src:src
+      
+    restart: on-failure:3  
