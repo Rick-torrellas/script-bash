@@ -48,5 +48,6 @@ services:
     
     volumes: 
       - ./src:src
+      - ./output:output
       
     restart: on-failure:3  
